@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>PhD Defense - Achintya Paradkar</title>
+  <meta name="description"
+        content="Invitation to the PhD thesis defense
+        of Achintya Paradkar at Chalmers University
+        of Technology, April 21, 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+  <style>
+    :root {
+      --navy: #002B49;
+      --navy-light: #003d66;
+      --gold: #C5A55A;
+      --gold-light: #d4bb7c;
+      --gold-pale: #f5efdf;
+      --cream: #FAFAF7;
+      --warm-white: #FFFDF9;
+      --text: #2c2c2c;
+      --text-light: #5a5a5a;
+      --border: #e0ddd5;
+      --success: #3a7d44;
+      --font-display: 'Cormorant Garamond', Georgia,
+        'Times New Roman', serif;
+      --font-body: 'Inter', -apple-system,
+        BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ---- Hero Section ---- */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem 1.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background:
+        radial-gradient(
+          ellipse at 20% 80%,
+          rgba(197,165,90,0.08) 0%,
+          transparent 50%
+        ),
+        radial-gradient(
+          ellipse at 80% 20%,
+          rgba(197,165,90,0.06) 0%,
+          transparent 50%
+        );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .chalmers-logo {
+      display: inline-block;
+      margin-bottom: 2rem;
+      opacity: 0.92;
+    }
+
+    .chalmers-logo img {
+      height: 54px;
+      width: auto;
+    }
+
+    .hero-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero .subtitle {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2rem;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .thesis-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1.45;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+
+    .gold-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 2rem;
+      opacity: 0.6;
+    }
+
+    /* ---- Countdown ---- */
+    .countdown-section {
+      background: var(--navy);
+      padding: 0 1.5rem 3rem;
+      text-align: center;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 70px;
+    }
+
+    .countdown-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .countdown-label {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.4rem;
+    }
+
+    .countdown-past {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ---- Main Content ---- */
+    .main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    /* ---- Personal Message ---- */
+    .message {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .message p {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    /* ---- Event Cards ---- */
+    .event-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem 2rem 1.8rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .event-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      border-radius: 6px 0 0 6px;
+    }
+
+    .card-defense::before {
+      background: var(--navy);
+    }
+
+    .card-party::before {
+      background: var(--gold);
+    }
+
+    .event-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+    }
+
+    .event-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .event-detail:last-child {
+      margin-bottom: 0;
+    }
+
+    .event-icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      color: var(--text-light);
+    }
+
+    .event-detail strong {
+      font-weight: 500;
+    }
+
+    .event-detail a {
+      color: var(--navy-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .event-detail a:hover {
+      color: var(--gold);
+    }
+
+    .defense-note {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .party-note {
+      margin-top: 1rem;
+      padding: 0.8rem 1rem;
+      background: var(--gold-pale);
+      border-radius: 4px;
+      font-size: 0.82rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ---- Section Dividers ---- */
+    .divider {
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+
+    .divider span {
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      vertical-align: middle;
+    }
+
+    .divider .dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin: 0 0.8rem;
+      vertical-align: middle;
+    }
+
+    /* ---- RSVP Form ---- */
+    .rsvp-section {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2.5rem 2rem;
+      margin-top: 1rem;
+    }
+
+    .rsvp-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .rsvp-deadline {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .form-group label .req {
+      color: #c0392b;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: border-color 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--navy);
+    }
+
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a5a5a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.85rem center;
+      padding-right: 2.2rem;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.3rem;
+    }
+
+    .radio-option {
+      position: relative;
+    }
+
+    .radio-option input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .radio-option label {
+      display: inline-block;
+      padding: 0.45rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s;
+      margin-bottom: 0;
+    }
+
+    .radio-option input:checked + label {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+
+    .radio-option label:hover {
+      border-color: var(--navy-light);
+    }
+
+    .checkbox-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.3rem;
+    }
+
+    .checkbox-option input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--navy);
+      cursor: pointer;
+    }
+
+    .checkbox-option label {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text);
+      cursor: pointer;
+      margin-bottom: 0;
+    }
+
+    .plus-one-section {
+      display: none;
+      margin-top: 1rem;
+      padding: 1.2rem;
+      background: var(--gold-pale);
+      border-radius: 4px;
+    }
+
+    .plus-one-section.visible {
+      display: block;
+    }
+
+    .plus-one-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 0.85rem;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: #fff;
+      background: var(--navy);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 2rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--navy-light);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .form-status {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      display: none;
+    }
+
+    .form-status.success {
+      color: var(--success);
+      display: block;
+    }
+
+    .form-status.error {
+      color: #c0392b;
+      display: block;
+    }
+
+    /* ---- Success State ---- */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .success-message.visible {
+      display: block;
+    }
+
+    .success-check {
+      width: 48px;
+      height: 48px;
+      color: var(--success);
+      margin-bottom: 1rem;
+    }
+
+    .success-message h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .success-message p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* ---- Footer ---- */
+    .footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .footer a {
+      color: var(--navy-light);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 600px) {
+      .hero {
+        padding: 2.5rem 1.2rem 2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .thesis-title {
+        font-size: 1.1rem;
+        padding: 0;
+      }
+      .hero .subtitle {
+        font-size: 1rem;
+      }
+      .countdown-num {
+        font-size: 1.8rem;
+      }
+      .countdown {
+        gap: 1rem;
+      }
+      .main {
+        padding: 2rem 1.2rem 1.5rem;
+      }
+      .event-card {
+        padding: 1.5rem 1.3rem;
+      }
+      .rsvp-section {
+        padding: 2rem 1.3rem;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .chalmers-logo img {
+        height: 42px;
+      }
+    }
+
+    /* ---- Fade-in Animation ---- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.6s ease,
+                  transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="chalmers-logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Chalmers_University_of_Technology_logo.svg/800px-Chalmers_University_of_Technology_logo.svg.png"
+          alt="Chalmers University of Technology"
+          loading="eager"
+        >
+      </div>
+      <p class="hero-label">
+        PhD Thesis Defense
+      </p>
+      <h1>Achintya Paradkar</h1>
+      <p class="subtitle">
+        cordially invites you to attend the public
+        defense of his doctoral thesis
+      </p>
+      <div class="gold-rule"></div>
+      <p class="thesis-title">
+        Coupling a Flux-Tunable Resonator to a
+        Magnetically Levitated Superconducting
+        Microparticle
+      </p>
+    </div>
+  </header>
+
+  <!-- Countdown -->
+  <section class="countdown-section" aria-label="Countdown">
+    <div id="countdown" class="countdown"></div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- Personal message -->
+    <div class="message fade-in">
+      <p>
+        After five years of wrangling superconducting
+        circuits, levitating tiny particles, and
+        consuming industrial quantities of coffee, the
+        end is finally in sight. I would be delighted
+        to have you there as I defend my thesis and,
+        more importantly, as we celebrate afterwards.
+        Hope to see you on April 21st!
+      </p>
+    </div>
+
+    <div class="divider">
+      <span></span>
+      <span class="dot"></span>
+      <span></span>
+    </div>
+
+    <!-- Defense Card -->
+    <div class="event-card card-defense fade-in">
+      <h2>Public Defense</h2>
+      <div class="event-detail">
+        <svg class="event-icon" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor"
+             stroke-width="1.8">
+          <rect x="3" y="4" width="18" height="18"
+                rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <div>
+          <strong>Tuesday, 21 April 2026</strong>
+          <br>09:00
+        </div>
+      </div>
+      <div class="event-detail">
+        <svg class="event-icon" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor"
+             stroke-width="1.8">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13
+                   a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <div>
+          <strong>Kollektorn (A423)</strong><br>
+          Department of Microtechnology and
+          Nanoscience (MC2)<br>
+          Chalmers University of Technology,
+          Gothenburg
+        </div>
+      </div>
+      <div class="event-detail">
+        <svg class="event-icon" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor"
+             stroke-width="1.8">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5
+                   a4 4 0 0 0-4 4v2"/>
+          <circle cx="8.5" cy="7" r="4"/>
+          <line x1="20" y1="8" x2="20" y2="14"/>
+          <line x1="23" y1="11" x2="17" y2="11"/>
+        </svg>
+        <div>
+          <strong>Faculty Opponent:</strong>
+          Prof. Gary Steele,
+          Delft University of Technology
+        </div>
+      </div>
+      <div class="event-detail">
+        <svg class="event-icon" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor"
+             stroke-width="1.8">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5
+                   a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <div>
+          <strong>Supervisor:</strong>
+          Prof. Witlef Wieczorek
+        </div>
+      </div>
+      <p class="defense-note">
+        The defense is a public event and open to
+        everyone. The presentation is approximately
+        20&ndash;30 minutes, followed by a discussion
+        with the opponent and grading committee.
+        The full procedure takes about 2.5 hours.
+      </p>
+    </div>
+
+    <!-- Party Card -->
+    <div class="event-card card-party fade-in">
+      <h2>Celebration Dinner</h2>
+      <div class="event-detail">
+        <svg class="event-icon" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor"
+             stroke-width="1.8">
+          <rect x="3" y="4" width="18" height="18"
+                rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <div>
+          <strong>Tuesday, 21 April 2026</strong>
+          <br>18:00
+        </div>
+      </div>
+      <div class="event-detail">
+        <svg class="event-icon" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor"
+             stroke-width="1.8">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13
+                   a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <div>
+          <strong>Royal Shalimar</strong><br>
+          Frihamnen 16B, 417 70 Gothenburg<br>
+          <a href="https://share.google/64qAd9TyEzlj9CUES"
+             target="_blank"
+             rel="noopener noreferrer">
+            Open in Google Maps &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="party-note">
+        The dinner is fully vegetarian. Both alcoholic
+        and non-alcoholic beverages will be available.
+        Please indicate your beverage preference in
+        the RSVP below so we can plan accordingly.
+      </div>
+    </div>
+
+    <div class="divider">
+      <span></span>
+      <span class="dot"></span>
+      <span></span>
+    </div>
+
+    <!-- RSVP Form -->
+    <section class="rsvp-section fade-in"
+             id="rsvp">
+      <h2>RSVP</h2>
+      <p class="rsvp-deadline">
+        Please respond by 1 March 2026
+      </p>
+
+      <form id="rsvpForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">
+              First name <span class="req">*</span>
+            </label>
+            <input type="text" id="firstName"
+                   class="form-input"
+                   required autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="lastName">
+              Last name <span class="req">*</span>
+            </label>
+            <input type="text" id="lastName"
+                   class="form-input"
+                   required autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">
+            Email <span class="req">*</span>
+          </label>
+          <input type="email" id="email"
+                 class="form-input"
+                 required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Will you attend the defense?
+            <span class="req">*</span>
+          </label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" id="defenseYes"
+                     name="defense" value="Yes"
+                     required>
+              <label for="defenseYes">Yes</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="defenseNo"
+                     name="defense" value="No">
+              <label for="defenseNo">No</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Will you attend the dinner?
+            <span class="req">*</span>
+          </label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" id="dinnerYes"
+                     name="dinner" value="Yes"
+                     required>
+              <label for="dinnerYes">Yes</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="dinnerNo"
+                     name="dinner" value="No">
+              <label for="dinnerNo">No</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" id="beverageGroup"
+             style="display:none;">
+          <label>Beverage preference</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" id="bevAlc"
+                     name="beverage"
+                     value="Alcoholic">
+              <label for="bevAlc">Alcoholic</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="bevNon"
+                     name="beverage"
+                     value="Non-alcoholic">
+              <label for="bevNon">
+                Non-alcoholic
+              </label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="bevBoth"
+                     name="beverage" value="Both">
+              <label for="bevBoth">Both</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plus-one section (URL gated) -->
+        <div class="plus-one-section"
+             id="plusOneSection">
+          <h3>Your plus-one</h3>
+          <div class="checkbox-option">
+            <input type="checkbox"
+                   id="bringingPlusOne">
+            <label for="bringingPlusOne">
+              I am bringing a guest
+            </label>
+          </div>
+          <div id="plusOneDetails"
+               style="display:none; margin-top:1rem;">
+            <div class="form-group">
+              <label for="plusOneName">
+                Guest name
+              </label>
+              <input type="text" id="plusOneName"
+                     class="form-input">
+            </div>
+            <div class="form-group">
+              <label>
+                Guest beverage preference
+              </label>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input type="radio"
+                         id="plusBevAlc"
+                         name="plusBeverage"
+                         value="Alcoholic">
+                  <label for="plusBevAlc">
+                    Alcoholic
+                  </label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio"
+                         id="plusBevNon"
+                         name="plusBeverage"
+                         value="Non-alcoholic">
+                  <label for="plusBevNon">
+                    Non-alcoholic
+                  </label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio"
+                         id="plusBevBoth"
+                         name="plusBeverage"
+                         value="Both">
+                  <label for="plusBevBoth">
+                    Both
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dietary">
+            Dietary restrictions or allergies
+          </label>
+          <input type="text" id="dietary"
+                 class="form-input"
+                 placeholder="e.g., gluten-free, nut allergy">
+        </div>
+
+        <div class="form-group">
+          <label for="message">
+            Message (optional)
+          </label>
+          <textarea id="messageField"
+                    class="form-textarea"
+                    rows="3"
+                    placeholder="Say something nice or funny"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit"
+                id="submitBtn">
+          Send RSVP
+        </button>
+        <div id="formStatus" class="form-status">
+        </div>
+      </form>
+
+      <div class="success-message"
+           id="successMsg">
+        <svg class="success-check"
+             viewBox="0 0 24 24" fill="none"
+             stroke="currentColor"
+             stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1
+                   1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01
+                            9 11.01"/>
+        </svg>
+        <h3>Thank you!</h3>
+        <p>
+          Your RSVP has been recorded.
+          See you on April 21st!
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      Achintya Paradkar &middot;
+      Quantum Technology Laboratory &middot;
+      MC2, Chalmers University of Technology
+    </p>
+    <p>
+      Questions? Reach me at
+      <a href="mailto:achintya@chalmers.se">
+        achintya@chalmers.se
+      </a>
+    </p>
+  </footer>
+
+  <script>
+  (function() {
+    'use strict';
+
+    /* ================================================
+       Configuration
+       ================================================
+       Replace this URL with your deployed
+       Google Apps Script web app URL.
+       See the setup instructions provided
+       separately.
+    ================================================ */
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxYRT38ahT4NgWKIukxPgKjrZDJMivA1Fgyt81wBH71Up-BRk2MZh1lz49jBb9nZlxp/exec';
+
+    /* ---- Plus-one gating via URL parameter ---- */
+    var params = new URLSearchParams(
+      window.location.search
+    );
+    var plusOneAllowed = params.get('p1') === '1';
+    if (plusOneAllowed) {
+      document.getElementById('plusOneSection')
+        .classList.add('visible');
+    }
+
+    /* ---- Countdown timer ---- */
+    var defenseDate = new Date('2026-04-21T09:00:00+02:00');
+
+    function updateCountdown() {
+      var now = new Date();
+      var diff = defenseDate - now;
+      var el = document.getElementById('countdown');
+      if (diff <= 0) {
+        el.innerHTML =
+          '<span class="countdown-past">' +
+          'The defense has taken place.' +
+          '</span>';
+        return;
+      }
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      el.innerHTML =
+        '<div class="countdown-unit">' +
+          '<span class="countdown-num">' + d +
+          '</span>' +
+          '<span class="countdown-label">' +
+          'Days</span></div>' +
+        '<div class="countdown-unit">' +
+          '<span class="countdown-num">' + h +
+          '</span>' +
+          '<span class="countdown-label">' +
+          'Hours</span></div>' +
+        '<div class="countdown-unit">' +
+          '<span class="countdown-num">' + m +
+          '</span>' +
+          '<span class="countdown-label">' +
+          'Minutes</span></div>' +
+        '<div class="countdown-unit">' +
+          '<span class="countdown-num">' + s +
+          '</span>' +
+          '<span class="countdown-label">' +
+          'Seconds</span></div>';
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* ---- Show/hide beverage on dinner=Yes ---- */
+    var dinnerRadios = document.querySelectorAll(
+      'input[name="dinner"]'
+    );
+    var bevGroup = document.getElementById(
+      'beverageGroup'
+    );
+    dinnerRadios.forEach(function(r) {
+      r.addEventListener('change', function() {
+        bevGroup.style.display =
+          this.value === 'Yes' ? 'block' : 'none';
+      });
+    });
+
+    /* ---- Plus-one toggle ---- */
+    var plusCheck = document.getElementById(
+      'bringingPlusOne'
+    );
+    var plusDetails = document.getElementById(
+      'plusOneDetails'
+    );
+    if (plusCheck) {
+      plusCheck.addEventListener('change',
+        function() {
+          plusDetails.style.display =
+            this.checked ? 'block' : 'none';
+        }
+      );
+    }
+
+    /* ---- Form submission ---- */
+    var form = document.getElementById('rsvpForm');
+    var statusEl = document.getElementById(
+      'formStatus'
+    );
+    var submitBtn = document.getElementById(
+      'submitBtn'
+    );
+    var successMsg = document.getElementById(
+      'successMsg'
+    );
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      statusEl.className = 'form-status';
+      statusEl.textContent = '';
+
+      var firstName = document.getElementById(
+        'firstName'
+      ).value.trim();
+      var lastName = document.getElementById(
+        'lastName'
+      ).value.trim();
+      var email = document.getElementById(
+        'email'
+      ).value.trim();
+      var defense = getRadioVal('defense');
+      var dinner = getRadioVal('dinner');
+
+      if (!firstName || !lastName || !email
+          || !defense || !dinner) {
+        showStatus(
+          'Please fill in all required fields.',
+          'error'
+        );
+        return;
+      }
+
+      var data = {
+        timestamp: new Date().toISOString(),
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        attendDefense: defense,
+        attendDinner: dinner,
+        beverage: dinner === 'Yes'
+          ? getRadioVal('beverage') : 'N/A',
+        dietary: document.getElementById(
+          'dietary'
+        ).value.trim(),
+        message: document.getElementById(
+          'messageField'
+        ).value.trim(),
+        plusOne: 'No',
+        plusOneName: '',
+        plusOneBeverage: ''
+      };
+
+      if (plusOneAllowed && plusCheck.checked) {
+        data.plusOne = 'Yes';
+        data.plusOneName = document.getElementById(
+          'plusOneName'
+        ).value.trim();
+        data.plusOneBeverage =
+          getRadioVal('plusBeverage');
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      if (false) {
+        /* Demo mode: simulate success */
+        setTimeout(function() {
+          showSuccess();
+        }, 800);
+        return;
+      }
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(function() {
+        showSuccess();
+      })
+      .catch(function() {
+        showStatus(
+          'Something went wrong. Please try ' +
+          'again or email achintya@chalmers.se.',
+          'error'
+        );
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send RSVP';
+      });
+    });
+
+    function showSuccess() {
+      form.style.display = 'none';
+      successMsg.classList.add('visible');
+    }
+
+    function showStatus(msg, type) {
+      statusEl.textContent = msg;
+      statusEl.className = 'form-status ' + type;
+    }
+
+    function getRadioVal(name) {
+      var sel = document.querySelector(
+        'input[name="' + name + '"]:checked'
+      );
+      return sel ? sel.value : '';
+    }
+
+    /* ---- Fade-in on scroll ---- */
+    var fadeEls = document.querySelectorAll(
+      '.fade-in'
+    );
+    var observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    fadeEls.forEach(function(el) {
+      observer.observe(el);
+    });
+
+  })();
+  </script>
+
+</body>
+</html>
