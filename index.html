@@ -1030,22 +1030,20 @@
         </div>
       </form>
 
-      <div class="success-message"
-           id="successMsg">
-        <svg class="success-check"
-             viewBox="0 0 24 24" fill="none"
-             stroke="currentColor"
-             stroke-width="2">
+      <div class="success-message" id="successMsg">
+        <svg class="success-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M22 11.08V12a10 10 0 1
-                   1-5.93-9.14"/>
+                         1-5.93-9.14" />
           <polyline points="22 4 12 14.01
-                            9 11.01"/>
+                                  9 11.01" />
         </svg>
         <h3>Thank you!</h3>
         <p>
           Your RSVP has been recorded.
           See you on April 21st!
         </p>
+        <div id="calendarButtons" style="margin-top: 1.5rem;">
+        </div>
       </div>
     </section>
 
@@ -1267,6 +1265,218 @@
     function showSuccess() {
       form.style.display = 'none';
       successMsg.classList.add('visible');
+      buildCalendarButtons();
+    }
+
+    function buildCalendarButtons() {
+      var defense = getRadioVal('defense');
+      var dinner = getRadioVal('dinner');
+      var container = document.getElementById(
+        'calendarButtons'
+      );
+
+      var which;
+      if (defense === 'Yes'
+        && dinner === 'Yes') {
+        which = 'both';
+      } else if (defense === 'Yes') {
+        which = 'defense';
+      } else if (dinner === 'Yes') {
+        which = 'dinner';
+      } else {
+        container.innerHTML = '';
+        return;
+      }
+
+      var gcalBoth = which === 'both';
+      var gcalHref = gcalBoth
+        ? googleCalURL('defense')
+        : googleCalURL(which);
+      var gcalHref2 = gcalBoth
+        ? googleCalURL('dinner')
+        : null;
+
+      var icsType = which;
+      var rowStyle =
+        'display:flex;align-items:center;'
+        + 'justify-content:center;gap:0.6rem;'
+        + 'margin-bottom:0.5rem;';
+      var iconStyle =
+        'width:18px;height:18px;'
+        + 'flex-shrink:0;';
+
+      var html =
+        '<p style="font-size:0.85rem;'
+        + 'color:var(--text-light);'
+        + 'margin-bottom:1rem;">'
+        + 'Add to your calendar:</p>';
+
+      if (gcalBoth) {
+        html += '<div style="' + rowStyle
+          + 'flex-wrap:wrap;">'
+          + '<a href="' + gcalHref + '"'
+          + ' target="_blank" rel="noopener"'
+          + ' style="' + calBtnStyle()
+          + 'width:220px;text-align:center;">'
+          + 'Google: Defense</a>'
+          + '<a href="' + gcalHref2 + '"'
+          + ' target="_blank" rel="noopener"'
+          + ' style="' + calBtnStyle()
+          + 'width:220px;text-align:center;">'
+          + 'Google: Dinner</a></div>';
+      } else {
+        html += '<div style="' + rowStyle + '">'
+          + '<a href="' + gcalHref + '"'
+          + ' target="_blank" rel="noopener"'
+          + ' style="' + calBtnStyle()
+          + 'width:220px;text-align:center;">'
+          + 'Google Calendar</a></div>';
+      }
+
+      html += '<div style="' + rowStyle + '">'
+        + '<button onclick="downloadICS(\''
+        + icsType + '\')"'
+        + ' style="' + calBtnStyle()
+        + 'width:220px;text-align:center;'
+        + 'background:#fff;color:var(--navy);'
+        + 'border:1px solid var(--border);">'
+        + 'Outlook / Apple (.ics)</button></div>';
+
+      if (which === 'both') {
+        html +=
+          '<p style="font-size:0.75rem;'
+          + 'color:var(--text-light);'
+          + 'margin-top:0.5rem;">'
+          + 'Includes both the defense and '
+          + 'dinner events.</p>';
+      }
+
+      container.innerHTML = html;
+    }
+
+    function calBtnStyle() {
+      return 'display:inline-block;'
+        + 'padding:0.5rem 1rem;'
+        + 'font-family:var(--font-body);'
+        + 'font-size:0.8rem;'
+        + 'font-weight:500;'
+        + 'color:#fff;'
+        + 'background:var(--navy);'
+        + 'border:none;border-radius:4px;'
+        + 'cursor:pointer;margin:0.3rem;';
+    }
+
+    function calLinkStyle() {
+      return 'display:inline-block;'
+        + 'padding:0.5rem 1rem;'
+        + 'font-family:var(--font-body);'
+        + 'font-size:0.8rem;'
+        + 'font-weight:500;'
+        + 'color:var(--navy);'
+        + 'background:#fff;'
+        + 'border:1px solid var(--border);'
+        + 'border-radius:4px;'
+        + 'text-decoration:none;margin:0.3rem;';
+    }
+
+    function getICSEvent(type) {
+      var events = {
+        defense: {
+          start: '20260421T070000Z',
+          end: '20260421T093000Z',
+          title: 'PhD Defense - Achintya Paradkar',
+          loc: 'Kollektorn (A423)\\, MC2\\, '
+            + 'Chalmers University of Technology'
+            + '\\, Gothenburg',
+          desc: 'Public defense of doctoral '
+            + 'thesis: Coupling a Flux-Tunable '
+            + 'Resonator to a Magnetically '
+            + 'Levitated Superconducting '
+            + 'Microparticle.\\n\\n'
+            + 'Faculty Opponent: '
+            + 'Prof. Gary Steele\\, '
+            + 'Delft University of Technology.'
+        },
+        dinner: {
+          start: '20260421T160000Z',
+          end: '20260421T200000Z',
+          title: 'Celebration Dinner - '
+            + 'Achintya Paradkar PhD',
+          loc: 'Royal Shalimar\\, '
+            + 'Frihamnen 16B\\, '
+            + '417 70 Gothenburg',
+          desc: 'Celebration dinner following '
+            + 'the PhD defense of '
+            + 'Achintya Paradkar.\\n\\n'
+            + 'Fully vegetarian dinner.'
+        }
+      };
+      var e = events[type];
+      return 'BEGIN:VEVENT\r\n'
+        + 'DTSTART:' + e.start + '\r\n'
+        + 'DTEND:' + e.end + '\r\n'
+        + 'SUMMARY:' + e.title + '\r\n'
+        + 'LOCATION:' + e.loc + '\r\n'
+        + 'DESCRIPTION:' + e.desc + '\r\n'
+        + 'STATUS:CONFIRMED\r\n'
+        + 'END:VEVENT\r\n';
+    }
+
+    function buildICS(types) {
+      var ics = 'BEGIN:VCALENDAR\r\n'
+        + 'VERSION:2.0\r\n'
+        + 'PRODID:-//PhD Defense//EN\r\n'
+        + 'CALSCALE:GREGORIAN\r\n'
+        + 'METHOD:PUBLISH\r\n';
+      types.forEach(function (t) {
+        ics += getICSEvent(t);
+      });
+      ics += 'END:VCALENDAR\r\n';
+      return ics;
+    }
+
+    window.downloadICS = function (which) {
+      var types = which === 'both'
+        ? ['defense', 'dinner'] : [which];
+      var filename = which === 'both'
+        ? 'phd-defense-and-dinner.ics'
+        : 'phd-' + which + '.ics';
+      var ics = buildICS(types);
+      var blob = new Blob([ics],
+        { type: 'text/calendar;charset=utf-8' }
+      );
+      var link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+
+    function googleCalURL(type) {
+      var events = {
+        defense: {
+          text: 'PhD Defense - Achintya Paradkar',
+          dates: '20260421T070000Z/20260421T093000Z',
+          loc: 'Kollektorn (A423), MC2, Chalmers, Gothenburg',
+          details: 'Public defense of doctoral thesis.'
+        },
+        dinner: {
+          text: 'Celebration Dinner - Achintya PhD',
+          dates: '20260421T160000Z/20260421T200000Z',
+          loc: 'Royal Shalimar, Frihamnen 16B, Gothenburg',
+          details: 'Celebration dinner. Fully vegetarian.'
+        }
+      };
+      var e = events[type];
+      return 'https://calendar.google.com/calendar'
+        + '/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent(e.text)
+        + '&dates=' + e.dates
+        + '&location='
+        + encodeURIComponent(e.loc)
+        + '&details='
+        + encodeURIComponent(e.details);
     }
 
     function showStatus(msg, type) {
