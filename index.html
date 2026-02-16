@@ -681,13 +681,20 @@
   <!-- Countdown -->
   <section class="countdown-section" aria-label="Countdown">
     <p style="font-family: var(--font-display);
-                font-size: 1.5rem;
-              color: rgba(255,255,255,0.85);
-              margin-bottom: 1.4rem;
-                text-align: center;">
-      Tuesday, 21 April 2026 at 09:00 CET
+                  font-size: 1.35rem;
+                  color: rgba(255,255,255,0.85);
+                  margin-bottom: 0.3rem;
+                  text-align: center;">
+      Defense: Tuesday, 21 April 2026 at 09:00
     </p>
-    <div id="countdown" class="countdown"></div>
+    <p style="font-family: var(--font-display);
+                  font-size: 1.35rem;
+                  color: var(--gold-light);
+                  margin-bottom: 1.4rem;
+                  text-align: center;">
+      Dinner: Tuesday, 21 April 2026 at 18:00
+    </p>
+    <!-- <div id="countdown" class="countdown"></div> -->
   </section>
 
   <!-- Main Content -->
@@ -1053,8 +1060,8 @@
     </p>
     <p>
       Questions? Reach me at
-      <a href="mailto:achintya@chalmers.se">
-        achintya@chalmers.se
+      <a href="mailto:achintya&#64;chalmers.se">
+        achintya&#64;chalmers.se
       </a>
     </p>
   </footer>
@@ -1090,6 +1097,7 @@
       var now = new Date();
       var diff = defenseDate - now;
       var el = document.getElementById('countdown');
+      if (!el) return;
       if (diff <= 0) {
         el.innerHTML =
           '<span class="countdown-past">' +
