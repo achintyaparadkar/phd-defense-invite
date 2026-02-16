@@ -1192,9 +1192,18 @@
       var dinner = getRadioVal('dinner');
 
       if (!firstName || !lastName || !email
-          || !defense || !dinner) {
+        || !defense || !dinner) {
         showStatus(
           'Please fill in all required fields.',
+          'error'
+        );
+        return;
+      }
+
+      if (dinner === 'Yes'
+        && !getRadioVal('beverage')) {
+        showStatus(
+          'Please select a beverage preference.',
           'error'
         );
         return;
